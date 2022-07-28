@@ -1,5 +1,5 @@
 # Votemandering
-Contains two notebooks (one for grid instances and the other for state maps), and a few data-files accompanying the codes.
+Contains two notebooks (RD_Gridgraphs.ipynb grid instances and RD_Statemaps.ipynb for state maps), and a few data-files (zip files containing tex files for the maps) accompanying the codes. The data-files are generated using notebooks (GridGerryChainLists.ipynb and ILGerrychainlists.ipynb for grid instances and state maps, rescpectively.)
 
 The notebooks implement our votemandering algorithm from our paper to find the optimal resource allocation and a target map that achieve the highest number of seats in two rounds, combined. These can be used to run large randomly generated samples with same specifications, for the purpose of reporting results with more confidence.
 
