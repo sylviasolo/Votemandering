@@ -1,5 +1,5 @@
 # Votemandering
-Contains two notebooks (each for grid instances and state maps), and a few data-files accompanying the codes.
+Contains two notebooks (one for grid instances and the other for state maps), and a few data-files accompanying the codes.
 
 This notebook implements our votemandering algorithm from our paper to find the optimal resource allocation and a target map that achieve the highest number of seats in two rounds, combined. It can be used to run large randomly generated samples with same specifications, for the purpose of reporting results with more confidence.
 
