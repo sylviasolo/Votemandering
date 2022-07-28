@@ -9,15 +9,18 @@ We first get a list of potential target maps, then arrange those in decreasing o
 
 Inputs: (look at the input cell)
 
-data files containing lists that represent map assignments (a large pool of maps).
-budgets for both the parties
-voter data (can be generated randomly within the code, given specifications)
-a fairness metric bound
-k: number of times we want to run instances of votemandering algorithm (number of samples)(instances are generated randomly given above inputs)
+1. data files containing lists that represent map assignments (a large pool of maps).
+2. budgets for both the parties
+3. voter data (can be generated randomly within the code, given specifications)
+4. a fairness metric bound
+5. k: number of times we want to run instances of votemandering algorithm (number of samples)(instances are generated randomly given above inputs)
+
+
 Output: For each sample, the following can also be obtained through printing and/or visualization codes. (Outputs of running one instance of the votemandering algorithm)
 
-Optimal target map specifications
-optimal budget allocation
-Round 1 and round 2 results
+1. Optimal target map specifications
+2. optimal budget allocation
+3. Round 1 and round 2 results
+
 This notebook can be used to compare the effects of compactness factor: two datafiles should be submitted, named datafile1 and datafile2 in the input cell. We can also play with the budget range, alpha and the number of samples. Outputs excel sheets showing total additional seats won for k samples, given all inputs, datafiles.
 
