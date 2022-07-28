@@ -1,7 +1,7 @@
 # Votemandering
 Contains two notebooks (one for grid instances and the other for state maps), and a few data-files accompanying the codes.
 
-This notebook implements our votemandering algorithm from our paper to find the optimal resource allocation and a target map that achieve the highest number of seats in two rounds, combined. It can be used to run large randomly generated samples with same specifications, for the purpose of reporting results with more confidence.
+The notebooks implements our votemandering algorithm from our paper to find the optimal resource allocation and a target map that achieve the highest number of seats in two rounds, combined. These can be used to run large randomly generated samples with same specifications, for the purpose of reporting results with more confidence.
 
 We use the process of Recombination to form a list of district maps within which we operate. We have generated the data files already, using the gerrychain package. We use this pool of maps and find our target map as the best amongst those.
 
@@ -22,5 +22,5 @@ Output: For each sample, the following can also be obtained through printing and
 2. optimal budget allocation
 3. Round 1 and round 2 results
 
-This notebook can be used to compare the effects of compactness factor: two datafiles should be submitted, named datafile1 and datafile2 in the input cell. We can also play with the budget range, alpha, and show boxplots comparing the outputs for large data (the number of samples). Outputs excel sheets showing total additional seats won for k samples, given all inputs, datafiles.
+The notebooks can be used to compare the effects of compactness factor: two datafiles should be submitted, named datafile1 and datafile2 in the input cell. We can also play with the budget range, alpha, and show boxplots comparing the outputs for large data (the number of samples). Outputs excel sheets showing total additional seats won for k samples, given all inputs, datafiles.
 
