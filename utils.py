@@ -47,18 +47,20 @@ def DefinedPopulation(votepattern, NumberOfUnits, minbound, maxbound, alpha, maj
     votesB = alpha*np.multiply(V,Q0)
     return V, P0, Q0, votesA, votesB
 
-def clusters(G, P0, n):
+def clusters(G, P0, n, distmin, distmax):
     votesdict = dict(zip(G.nodes(), P0))
     for i in range(n):
         random_node = random.sample(G.nodes, 1)
         neighbors=[j for j in G.neighbors(random_node[0])]
         avglist = [votesdict[j] for j in neighbors]
         avg = sum(avglist)/len(avglist)
-        if avg >0.5:
-            votesdict[random_node[0]] = np.random.uniform(0.6, 0.8)
-        else:
-            votesdict[random_node[0]] = np.random.uniform(0.2, 0.4)
+        #if avg >=0.5:
+           # votesdict[random_node[0]] = 0.6 #np.random.uniform(0.5, distmax)
+        #else:
+           # votesdict[random_node[0]] = 0.4 #np.random.uniform(distmin, 0.5)
+        votesdict[random_node[0]]= avg
     Pnew = list(votesdict.values())
+   
     return Pnew
         
 def moranI(G, P0):
@@ -102,6 +104,37 @@ def createlabels(Y,G):
             labels[node]='A'
         i=i+1
     return labels
+
+def distributiongraph(G,NumberOfUnits, votesA, votesB ):
+    my_pos = {(x,y):(y,-x) for x,y in G.nodes()}
+    figsize=(10, 10)
+    pos_higher = {}
+    pos_lower = {}
+    x_off = 0.3 # offset on the x axis
+    y_off = 0.3 # offset on the y axis
+    red_patch = mpatches.Patch(color='red', label='Votes for A')
+    black_patch = mpatches.Patch(color='black', label='Votes for B')
+    #black_patch = mpatches.Patch(color=colors[1], label='Votes for B')
+    cmap=plt.cm.Spectral
+
+
+    #1 Initial map with original vote shares
+
+
+    W0=np.zeros(NumberOfUnits)
+    for i in range(0, NumberOfUnits): 
+      if votesA[i]> votesB[i]:
+          W0[i] = 1
+
+
+    plt.figure(1, figsize=figsize)
+    plt.margins(x=0.25, y=0.25)
+    ax = plt.gca()
+    ax.set_title('Original map and original data: given data for investing')
+    #G1 = nx.draw(G, node_color = [cmap(v/NumberOfDistricts) for v in initmap],  pos = my_pos, ax=ax)
+    G1 = nx.draw(G,   pos = my_pos, ax=ax)
+    labels = createlabels(W0,G) 
+    nx.draw_networkx_labels(G1, my_pos, labels, font_size=20, font_color='w')
 
 def plotgraphs(G, NumberOfUnits, NumberOfDistricts, initmap, targetmap, NewvotesA, NewvotesB, votesA, votesB):
     #my_pos={x: x for x in G.nodes()},          
