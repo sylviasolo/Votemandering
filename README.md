@@ -24,3 +24,5 @@ Output: For each sample, the following can also be obtained through printing and
 
 The notebooks can be used to compare the effects of compactness factor: two datafiles should be submitted, named datafile1 and datafile2 in the input cell. We can also play with the budget range, alpha, and show boxplots comparing the outputs for large data (the number of samples). Outputs excel sheets showing total additional seats won for k samples, given all inputs, datafiles.
 
+
+The notebook RD_helpers_utils has a more organized code. You may give any file containing map descriptions (grids for example), and specify other parameters. It gives the votemandering objective.
